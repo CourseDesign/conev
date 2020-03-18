@@ -38,12 +38,11 @@ async function main() {
     .setConfig('dev', dev)
     .setConfig('prd', prd);
 
-  const builder = new ConfigBuilder();
+  const builder = new ConfigBuilder()
+    .setEnv({basic: 'basic', current: 'dev'})
+    .addSource(jsonSource);
 
-  const config = await builder
-    .setEnv({ basic: 'basic', current: 'dev' })
-    .addSource(jsonSource)
-    .build();
+  const config = await builder.build();
 
   console.log(config.get());
   console.log(config.get('a.b.c'));

@@ -14,8 +14,8 @@ class Config {
   ) {
     const configs = [];
 
-    configs.push(map.get(environment.basic));
     configs.push(map.get(environment.current));
+    configs.push(map.get(environment.basic));
 
     this.value = integrateConfig(configs);
   }

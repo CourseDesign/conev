@@ -1,36 +1,28 @@
 // eslint-disable-next-line no-unused-vars
 import { Source } from '../source/source';
-// eslint-disable-next-line no-unused-vars
-import { Environment } from '../environment/environment';
 
 import extractConfigFromSources from './extract-config-from-sources';
 import addSource from '../source/add-source';
 import Config from '../config/config';
 
 export default class ConfigBuilder {
-  private readonly sources: Array<Source>;
+  private readonly sources: Source[];
 
-  private env: Environment;
+  private env: string[];
 
-  constructor(sources?: Array<Source>, env?: Environment) {
+  constructor(sources?: Source[], env?: string[]) {
     this.sources = sources || [];
-    this.env = env || { basic: 'basic', current: process.env.NODE_ENV };
+    this.env = env || [process.env.NODE_ENV as string, 'basic'];
   }
 
-  setEnv(env: Environment): ConfigBuilder {
+  setEnv(...env: string[]): ConfigBuilder {
     this.env = env;
 
     return this;
   }
 
-  setBasicEnv(env: string): ConfigBuilder {
-    this.env.basic = env;
-
-    return this;
-  }
-
-  setCurrentEnv(env: string): ConfigBuilder {
-    this.env.current = env;
+  addEnv(...env: string[]): ConfigBuilder {
+    this.env.push(...env);
 
     return this;
   }

@@ -1,5 +1,4 @@
 // eslint-disable-next-line no-unused-vars
-import { Environment } from '../environment/environment';
 import integrateConfig from './integrate-config';
 import getConfig from './get-config';
 import setConfig from './set-config';
@@ -9,12 +8,9 @@ export default class Config {
 
   constructor(
     map: Map<string, object>,
-    environment: Environment,
+    envs: string[],
   ) {
-    const configs = [];
-
-    configs.push(map.get(environment.current));
-    configs.push(map.get(environment.basic));
+    const configs = envs.map((env) => map.get(env));
 
     this.value = integrateConfig(configs);
   }

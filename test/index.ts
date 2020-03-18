@@ -1,4 +1,4 @@
-import {ConfigBuilder, JsonSource} from '../lib';
+import { ConfigBuilder, JsonSource } from '../lib';
 
 const dev = {
   a: {
@@ -39,7 +39,7 @@ async function main() {
     .setConfig('prd', prd);
 
   const builder = new ConfigBuilder()
-    .setEnv({basic: 'basic', current: 'dev'})
+    .setEnv('dev', 'basic')
     .addSource(jsonSource);
 
   const config = await builder.build();

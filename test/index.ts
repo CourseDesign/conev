@@ -49,6 +49,7 @@ async function main() {
     .build();
 
   console.log(config.get());
+  console.log(config.get('a.b.c'));
 }
 
 main();

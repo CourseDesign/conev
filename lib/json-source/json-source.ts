@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { Source } from '../source/source';
 
-class JsonSource implements Source {
+export default class JsonSource implements Source {
   private readonly map: Map<string, object>;
 
   constructor(map?: Map<string, object>) {
@@ -24,5 +24,3 @@ class JsonSource implements Source {
     return this.map;
   }
 }
-
-export = JsonSource;

@@ -1,7 +1,5 @@
-import deepAssignObject = require('../object/deep-assign-object');
+import deepAssignObject from '../object/deep-assign-object';
 
-function integrateConfig(configs: Array<object>): object {
+export default function integrateConfig(configs: Array<object>): object {
   return configs.reverse().reduce((pre, curr) => deepAssignObject(pre, curr), {});
 }
-
-export = integrateConfig;

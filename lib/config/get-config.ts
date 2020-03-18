@@ -1,4 +1,4 @@
-function getConfig(config: object, key?: string): object {
+export default function getConfig(config: object, key?: string): object {
   if (key === null) return config;
 
   let current = config;
@@ -8,5 +8,3 @@ function getConfig(config: object, key?: string): object {
 
   return current;
 }
-
-export = getConfig;

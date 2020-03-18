@@ -1,4 +1,4 @@
-import ConfigBuilder = require('./config-builder/config-builder');
-import JsonSource = require('./json-source/json-source');
+import ConfigBuilder from './config-builder/config-builder';
+import JsonSource from './json-source/json-source';
 
-export = { ConfigBuilder, JsonSource };
+export { ConfigBuilder, JsonSource };

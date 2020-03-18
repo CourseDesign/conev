@@ -1,4 +1,4 @@
-function deepAssignObject(target: any, source: any): any {
+export default function deepAssignObject(target: any, source: any): any {
   if (target === null || target === undefined) return source;
   if (source === undefined) return target;
   if (source === null) return source;
@@ -13,5 +13,3 @@ function deepAssignObject(target: any, source: any): any {
 
   return target;
 }
-
-export = deepAssignObject;

@@ -3,12 +3,11 @@ import { Source } from '../source/source';
 // eslint-disable-next-line no-unused-vars
 import { Environment } from '../environment/environment';
 
-// eslint-disable-next-line no-unused-vars
-import Config = require('../config/config');
-import addSource = require('../source/add-source');
-import extractConfigFromSources = require('./extract-config-from-sources');
+import extractConfigFromSources from './extract-config-from-sources';
+import addSource from '../source/add-source';
+import Config from '../config/config';
 
-class ConfigBuilder {
+export default class ConfigBuilder {
   private readonly sources: Array<Source>;
 
   private env: Environment;
@@ -48,5 +47,3 @@ class ConfigBuilder {
     return new Config(config, this.env);
   }
 }
-
-export = ConfigBuilder;

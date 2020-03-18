@@ -1,11 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import { Environment } from '../environment/environment';
+import integrateConfig from './integrate-config';
+import getConfig from './get-config';
+import setConfig from './set-config';
 
-import integrateConfig = require('./integrate-config');
-import getConfig = require('./get-config');
-import setConfig = require('./set-config');
-
-class Config {
+export default class Config {
   private value: object;
 
   constructor(
@@ -30,4 +29,3 @@ class Config {
     setConfig(this.value, key, value);
   }
 }
-export = Config;

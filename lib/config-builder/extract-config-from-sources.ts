@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import { Source } from '../source/source';
+import integrateConfig from '../config/integrate-config';
 
-import integrateConfig = require('../config/integrate-config');
-
-async function extractConfigFromSources(sources: Array<Source>): Promise<Map<string, object>> {
+// eslint-disable-next-line max-len
+export default async function extractConfigFromSources(sources: Array<Source>): Promise<Map<string, object>> {
   const configs = await Promise.all(sources.map((source) => source.build()));
   const configsMap = new Map<string, Array<object>>();
 
@@ -21,5 +21,3 @@ async function extractConfigFromSources(sources: Array<Source>): Promise<Map<str
 
   return configMap;
 }
-
-export = extractConfigFromSources;

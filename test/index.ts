@@ -1,5 +1,4 @@
-import importer = require('../lib');
-const { ConfigBuilder, JsonSource } = importer;
+import { ConfigBuilder, JsonSource } from '../lib';
 
 const dev = {
   a: {

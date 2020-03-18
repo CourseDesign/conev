@@ -1,4 +1,4 @@
-function isPureObject(input: any): boolean {
+export default function isPureObject(input: any): boolean {
   if (typeof input !== 'object') return false;
   if (input === null || input === undefined || typeof input !== 'object') return false;
   const prototype = Object.getPrototypeOf(input);
@@ -7,5 +7,3 @@ function isPureObject(input: any): boolean {
   // eslint-disable-next-line no-prototype-builtins
   return prototype.isPrototypeOf(Object);
 }
-
-export = isPureObject;

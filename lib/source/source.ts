@@ -1,3 +1,3 @@
-export interface Source {
+export default interface Source {
   build(): Promise<Map<string, object>>;
 }

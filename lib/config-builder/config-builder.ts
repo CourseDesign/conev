@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { Source } from '../source/source';
+import Source from '../source/source';
 
 import extractConfigFromSources from './extract-config-from-sources';
 import addSource from '../source/add-source';

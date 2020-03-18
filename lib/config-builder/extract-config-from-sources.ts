@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
-import { Source } from '../source/source';
+import Source from '../source/source';
+
 import integrateConfig from '../config/integrate-config';
 
 // eslint-disable-next-line max-len

@@ -1,15 +1,27 @@
 {
   "name": "conev",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "lib",
+  "main": "dist/lib/index.js",
+  "types" : "dist/lib/index.d.ts",
   "scripts": {
-    "prepack": "npm run build && npm run lint exit 0",
+    "prepare": "npm run buildPublish && npm run lint; exit 0",
     "build": "tsc",
-    "lint": "eslint '**/*.js' --quiet --fix; eslint '**/*.ts' --quiet --fix"
+    "buildPublish": "tsc -p ./publish-config",
+    "lint": "eslint '**/*.ts' --quiet --fix; eslint '**/*.js' --quiet --fix"
   },
-  "keywords": [],
-  "author": "",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "config", "environment"
+  ],
+  "author": "Park Si-Yual",
+  "homepage": "https://github.com/kdPark0723/conev",
+  "bugs": {
+    "url": "https://github.com/kdPark0723/conev/issues",
+    "email": "kdpark023@gmail.com"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^13.9.1",
@@ -20,5 +32,8 @@
     "eslint-import-resolver-node": "^0.3.3",
     "eslint-plugin-import": "^2.20.1",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "conev-source-json": "0.0.4"
   }
 }

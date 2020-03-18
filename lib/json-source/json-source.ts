@@ -8,13 +8,13 @@ class JsonSource implements Source {
     this.map = map || new Map<string, object>();
   }
 
-  setEnv(env: string, value: object): JsonSource {
+  setConfig(env: string, value: object): JsonSource {
     this.map.set(env, value);
 
     return this;
   }
 
-  removeJson(env: string, value: object): JsonSource {
+  removeConfig(env: string, value: object): JsonSource {
     this.map.set(env, value);
 
     return this;

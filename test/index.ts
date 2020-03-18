@@ -37,9 +37,9 @@ async function main() {
   const jsonSource = new JsonSource();
 
   jsonSource
-    .setEnv('basic', basic)
-    .setEnv('dev', dev)
-    .setEnv('prd', prd);
+    .setConfig('basic', basic)
+    .setConfig('dev', dev)
+    .setConfig('prd', prd);
 
   const builder = new ConfigBuilder();
 

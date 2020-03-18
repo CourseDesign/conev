@@ -1,4 +1,4 @@
-import { ConfigBuilder, JsonSource } from '../lib';
+import {ConfigBuilder, JsonSource} from '../lib';
 
 const dev = {
   a: {
@@ -33,9 +33,7 @@ const basic = {
 };
 
 async function main() {
-  const jsonSource = new JsonSource();
-
-  jsonSource
+  const jsonSource = new JsonSource()
     .setConfig('basic', basic)
     .setConfig('dev', dev)
     .setConfig('prd', prd);

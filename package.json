@@ -1,9 +1,9 @@
 {
   "name": "conev",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Conev is a module that build environment variables from a `source` into `config`.",
   "main": "dist/lib/index.js",
-  "types" : "dist/lib/index.d.ts",
+  "types": "dist/lib/index.d.ts",
   "scripts": {
     "prepare": "npm run buildPublish && npm run lint; exit 0",
     "build": "tsc",
@@ -14,7 +14,8 @@
     "dist"
   ],
   "keywords": [
-    "config", "environment"
+    "config",
+    "environment"
   ],
   "author": "Park Si-Yual",
   "homepage": "https://github.com/kdPark0723/conev",
@@ -34,6 +35,6 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "conev-source-json": "0.0.4"
+    "conev-source-json": "1.0.0"
   }
 }

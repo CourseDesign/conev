@@ -23,7 +23,7 @@ yarn add conev
 Get ConfigBuilder from conev and one or more Sources to use. In this example, the built-in JsonSource is used.
 
 ```typescript
-import { ConfigBuilder, JsonSource } from 'conev;
+import { ConfigBuilder, JsonSource } from 'conev';
 ```
 
 And create Source and set up.

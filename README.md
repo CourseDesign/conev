@@ -32,7 +32,7 @@ And create Source and set up.
 const jsonSource = new JsonSource();
 
 jsonSource    
-	.setConfig('basic', basic) // basic is JSON
+    .setConfig('basic', basic) // basic is JSON
     .setConfig('dev', dev) // dev is JSON
     .setConfig('prd', prd); // prd is JSON
 ```

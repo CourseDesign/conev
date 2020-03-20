@@ -112,6 +112,37 @@ interface Source {
 
 ​    
 
+## Json Source
+
+```typescript
+class JsonSource {
+    constructor(map?: Map<string, object>);
+    setConfig(env: string, value: object): JsonSource;
+    removeConfig(env: string, value: object): JsonSource;
+    export(): Promise<Map<string, object>>;
+}
+
+```
+
+`JsonSource` defines the source from JSON. Use `setConfig` to add a configuration for a new environment or ` removeConfig` to delete a configuration. Map is returned as the result value of `export`. The key of this map is environment and the value is the configuration when environment.
+
+​    
+
+## Json File Source
+
+```typescript
+class JsonFileSource {
+    constructor(fileMap?: Map<string, string>);
+    setConfig(env: string, filename: string): JsonFileSource;
+    removeConfig(env: string, filename: string): JsonFileSource;
+    export(): Promise<Map<string, object>>;
+}
+```
+
+`JsonFileSource` defines the source from JSON file. Use `setConfig` to add a configuration for a new environment or ` removeConfig` to delete a configuration. Map is returned as the result value of `export`. The key of this map is environment and the value is the configuration when environment.
+
+​    
+
 ## Expansion
 
 It can be extended by defining a new `Source`.

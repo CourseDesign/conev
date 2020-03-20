@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "conev-core": "^1.1.1",
-    "conev-source-json": "1.0.3"
+    "conev-source-json": "^1.0.3",
+    "conev-source-jsonfile": "^1.0.1"
   }
 }

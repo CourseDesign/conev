@@ -78,6 +78,28 @@ class ConfigBuilder {
 
 ​    
 
+## Config
+
+```typescript
+class Config {
+    cconstructor(sources: Source[], env: string[]);
+    
+    setEnv(...env: string[]): Config;
+    addEnv(...env: string[]): Config;
+    
+    addSource(source: Source, priority?: number): Config;
+        
+    refresh(): Promise<Config>;
+    
+    get(key?: string): object;
+    set(key: string, value: any): void;
+}
+```
+
+`config` is a container for configuration. `config` is provided by creating a new configuration from the configuration and environment obtained from ` source`.
+
+​    
+
 ## Source
 
 ```typescript
@@ -87,20 +109,6 @@ interface Source {
 ```
 
 `Source` defines the source from which to get the configuration. Map is returned as the result value of `export`. The key of this map is environment and the value is the configuration when environment.
-
-​    
-
-## Config
-
-```typescript
-class Config {
-    constructor(map: Map<string, object>, envs: string[]);
-    get(key?: string): object;
-    set(key: string, value: any): void;
-}
-```
-
-`config` is a container for configuration. `config` is provided by creating a new configuration from the configuration and environment obtained from ` source`.
 
 ​    
 

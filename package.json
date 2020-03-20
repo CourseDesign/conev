@@ -35,7 +35,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "conev-core": "^1.0.2",
+    "conev-core": "^1.1.0",
     "conev-source-json": "1.0.3"
   }
 }

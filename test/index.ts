@@ -3,9 +3,6 @@ import { ConfigBuilder, JsonSource } from '../lib';
 const dev = {
   a: {
     b: {
-      c: {
-        value: 'c dev',
-      },
     },
     value: 'a dev',
   },
@@ -25,7 +22,7 @@ const basic = {
   a: {
     b: {
       c: {
-        value: 'c basic',
+        value: undefined,
       },
       value: 'b basic',
     },
@@ -42,7 +39,9 @@ async function main() {
     .setEnv('dev', 'basic')
     .addSource(jsonSource);
 
-  const config = await builder.build();
+  const config = await builder.build().refresh();
+
+  // config.validate();
 
   console.log(config.get());
   console.log(config.get('a.b.c'));

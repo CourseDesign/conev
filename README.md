@@ -117,8 +117,9 @@ interface Source {
 ```typescript
 class JsonSource {
     constructor(map?: Map<string, object>);
-    setConfig(env: string, value: object): JsonSource;
-    removeConfig(env: string, value: object): JsonSource;
+    setConfig(env: string, ...values: object[]): JsonSource
+    addConfig(env: string, ...values: object[]): JsonSource;
+    removeConfig(env: string): JsonSource;
     export(): Promise<Map<string, object>>;
 }
 
@@ -133,8 +134,9 @@ class JsonSource {
 ```typescript
 class JsonFileSource {
     constructor(fileMap?: Map<string, string>);
-    setConfig(env: string, filename: string): JsonFileSource;
-    removeConfig(env: string, filename: string): JsonFileSource;
+    setConfig(env: string, ...filenames: string[]): JsonFileSource;
+    addConfig(env: string, ...filename: string[]): JsonFileSource;
+    removeConfig(env: string): JsonFileSource;
     export(): Promise<Map<string, object>>;
 }
 ```

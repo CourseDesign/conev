@@ -1,11 +1,11 @@
 {
   "name": "conev",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Conev is a module that build environment variables from a `source` into `config`.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "npm run buildPublish && npm run lint; exit 0",
+    "prepublishOnly": "npm run buildPublish && npm run lint; exit 0",
     "build": "tsc",
     "buildPublish": "tsc -p ./publish-config",
     "lint": "eslint '**/*.ts' --quiet --fix; eslint '**/*.js' --quiet --fix"
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "conev-core": "^1.2.0",
-    "conev-source-json": "^1.0.3",
-    "conev-source-jsonfile": "^1.0.1"
+    "conev-source-json": "^1.1.0",
+    "conev-source-jsonfile": "^1.1.0"
   }
 }

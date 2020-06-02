@@ -4,6 +4,7 @@ const dev = {
   a: {
     b: {
     },
+    e: new Array<string>('dev'),
     value: 'a dev',
   },
 };
@@ -26,6 +27,7 @@ const basic = {
       },
       value: 'b basic',
     },
+    e: new Array<string>('basic'),
   },
 };
 
@@ -43,8 +45,8 @@ async function main() {
 
   // config.validate();
 
-  console.log(config.get());
-  console.log(config.get('a.b.c'));
+  console.log(JSON.stringify(config.get()));
+  console.log(JSON.stringify(config.get('a.b.c')));
 }
 
 main();
